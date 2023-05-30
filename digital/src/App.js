@@ -1,10 +1,13 @@
 
 import './App.css';
+import Homepage from './components/Homepage'
 
-function App() {
+const App = () =>  {
   return (
     <div className="App">
-      <p>hello</p>
+    <Homepage>
+
+    </Homepage>
     </div>
   );
 }
