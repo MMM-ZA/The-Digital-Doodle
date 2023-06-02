@@ -10,6 +10,6 @@ import store from "../src/storage/store";
 ReactDOM.render(
   <Provider store={store}>
     <App />
-   </Provider>
+   </Provider>,
+document.getElementById('root')
 );
-document.getElementById('root');
