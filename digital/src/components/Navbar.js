@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.navbar}>
-      <h1 className={classes.navbar__header}>BlogMania 💬</h1>
+      <h1 className={classes.navbar__header}>Digital Doodle 💬</h1>
       {isSignedIn && (
         <div className={classes.blog__search}>
           <input
@@ -55,14 +55,14 @@ const Navbar = () => {
           />
           <h1 className={classes.signedIn}>{userData?.givenName}</h1>
           <GoogleLogout
-            clientId="294875369753-40ut810th0aiggg69hm7ods5f7g5ab6t.apps.googleusercontent.com"
+            clientId=""
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
                 className={classes.logout__button}
               >
-                Logout 😦
+                Logout
               </button>
             )}
             onLogoutSuccess={logout}

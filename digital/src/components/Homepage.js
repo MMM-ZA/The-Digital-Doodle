@@ -23,12 +23,12 @@ const Homepage = () => {
     <div className={classes.home__page } style={{ display: isSignedIn ? "none" : "" }}>
       {!isSignedIn ? (
         <div className={classes.login__message}>
-          <h2>📗</h2>
+
           <h1>Exploring a World of Ideas</h1>
           <p> Sign up and read some quality blogs.
           </p>
           <GoogleLogin
-            clientId=""
+            clientId="294875369753-40ut810th0aiggg69hm7ods5f7g5ab6t.apps.googleusercontent.com"
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}
