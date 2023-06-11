@@ -3,11 +3,11 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUserInput, setBlogData } from "../features/userSlice";
 
-import "../styling/blogs.css";
+import classes from  "../styling/Blogs.module.css";
 
 const Blogs = () => {
   const searchInput = useSelector(selectUserInput);
-  const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=74da443369bd202a1f3146a275d761fc`;
+  const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=6ee953hfkefkfhwehfwehf`;
   const dispatch = useDispatch();
   const [blogs, setBlogs] = useState();
 
@@ -27,15 +27,15 @@ const Blogs = () => {
   }, [searchInput]);
 
   return (
-    <div className="blog__page">
-      <h1 className="blog__page__header">Blogs</h1>
-      {loading ? <h1 className="loading">Loading...</h1> : ""}
-      <div className="blogs">
+    <div className={classes.blog__page}>
+      <h1 className={classes.blog__page__header}>Blogs</h1>
+      {loading ? <h1 className={classes.loading}>Loading...</h1> : ""}
+      <div className={classes.blogs}>
         {blogs?.articles?.map((blog) => (
-          <a className="blog" target="_blank" href={blog.url}>
-            <img src={blog.image} />
+        <a className={classes.blog} target="_blank" rel="noopener noreferrer" href={blog.url}>
+            <img src={blog.image} alt="" />
             <div>
-              <h3 className="sourceName">
+              <h3 className={classes.sourceName}>
                 <span>{blog.source.name}</span>
                 <p>{blog.publishedAt}</p>
               </h3>
@@ -46,7 +46,7 @@ const Blogs = () => {
         ))}
 
         {blogs?.totalArticles === 0 && (
-          <h1 className="no__blogs">
+          <h1 className={classes.no__blogs}>
             No blogs available.
           </h1>
         )}

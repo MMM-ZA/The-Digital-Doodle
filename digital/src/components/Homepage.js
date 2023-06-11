@@ -28,7 +28,7 @@ const Homepage = () => {
           <p> Sign up and read some quality blogs.
           </p>
           <GoogleLogin
-            clientId="294875369753-40ut810th0aiggg69hm7ods5f7g5ab6t.apps.googleusercontent.com"
+            clientId=""
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}
@@ -40,7 +40,7 @@ const Homepage = () => {
             )}
             onSuccess={login}
             onFailure={login}
-            isSignedIn={true }
+            isSignedIn={true}
             cookiePolicy={"single_host_origin"}
           />
         </div>

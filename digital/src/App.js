@@ -1,5 +1,6 @@
 
 import './App.css';
+import Blogs from './components/Blogs';
 import Homepage from './components/Homepage'
 import Navbar from './components/Navbar';
 
@@ -8,6 +9,7 @@ const App = () =>  {
     <div className="App">
     <Navbar/>
     <Homepage/>
+    <Blogs/>
     </div>
   );
 }
