@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUserInput, setBlogData } from "../features/userSlice";
 
 import classes from  "../styling/Blogs.module.css";
+require('dotenv').config();
 
 const Blogs = () => {
+  const API_KEY = process.env.API_KEY
   const searchInput = useSelector(selectUserInput);
-  const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=6ee953hfkefkfhwehfwehf`;
+ const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=${API_KEY}`;
   const dispatch = useDispatch();
   const [blogs, setBlogs] = useState();
 
@@ -24,7 +26,7 @@ const Blogs = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [searchInput]);
+  }, [searchInput, blog_url, dispatch]);
 
   return (
     <div className={classes.blog__page}>
